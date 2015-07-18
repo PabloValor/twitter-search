@@ -7,14 +7,27 @@
     <link rel="stylesheet" href="dist/css/main.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body ng-app>
-    <h1>Twitter Search</h1>
-    <div>
-        <input type="text" ng-model="name">
-        <p>{{name}}</p>
+<body class="blue lighten-3">
+    <div class="container blue lighten-4">
+        <h1>Twitter Search</h1>
+        <div class="row">
+            <form action="" class="col s12" method="get">
+                <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="What are you looking for?" id="search" type="text" class="validate">
+                      <label for="search">Search</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="center-align">
+                        <a class="waves-effect waves-light btn blue darken-4"><i class="material-icons left">search</i>Search</a>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    <a class="waves-effect waves-light btn"><i class="material-icons left">search</i>Working</a>
-    <i class="material-icons">send</i>
+
+    <!-- Scripts -->
     <script type="text/javascript" src="dist/js/main.min.js"></script>
 </body>
 </html>
