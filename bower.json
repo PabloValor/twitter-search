@@ -1,9 +1,10 @@
 {
-    "name": "bower",
-    "dependencies": {
-        "jquery": "latest"
-    },
-    "install": {
-        "path": "./src/libs"
-    }
+  "name": "bower",
+  "dependencies": {
+    "jquery": "latest",
+    "angular": "~1.4.3"
+  },
+  "install": {
+    "path": "./src/libs"
+  }
 }
