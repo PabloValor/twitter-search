@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Twitter Search</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="dist/css/main.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body ng-app>
     <h1>Twitter Search</h1>
-    <div ng-app>
+    <div>
         <input type="text" ng-model="name">
         <p>{{name}}</p>
     </div>
-    <a class="waves-effect waves-light btn"><i class="material-icons left"></i>Working</a>
-
+    <a class="waves-effect waves-light btn"><i class="material-icons left">search</i>Working</a>
+    <i class="material-icons">send</i>
     <script type="text/javascript" src="dist/js/main.min.js"></script>
 </body>
 </html>
