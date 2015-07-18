@@ -16,7 +16,7 @@ gulp.task('browser-sync', function() {
 
 // process JS files and return the stream.
 gulp.task('js', function () {
-    return gulp.src(['js/vendor/*.js','js/*.js'])
+    return gulp.src(['src/libs/**/*.js','src/js/*.js'])
     		//.pipe(uglify()) // uncomment this line for production
     		.pipe(concat('main.min.js'))
 	        .pipe(gulp.dest('dist/js'));
@@ -24,14 +24,14 @@ gulp.task('js', function () {
 
 // process LESS files and return the stream.
 gulp.task('less', function () {
-    return gulp.src(['css/main.less'])
+    return gulp.src(['src/css/main.less'])
 	    	.pipe(less({compress: true}))
 	    	.pipe(concat('main.min.css'))
 	        .pipe(gulp.dest('dist/css'));
 });
 
-gulp.watch('js/**/*.js', ['js']);
-gulp.watch('css/**/*.less', ['less']);
+gulp.watch('src/**/*.js', ['js']);
+gulp.watch('src/**/*.less', ['less']);
 gulp.watch('*.html').on('change', browserSync.reload);
 gulp.watch('dist/**').on('change', browserSync.reload);
 

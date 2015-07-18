@@ -1,0 +1,9 @@
+{
+    "name": "bower",
+    "dependencies": {
+        "jquery": "latest"
+    },
+    "install": {
+        "path": "./src/libs"
+    }
+}
