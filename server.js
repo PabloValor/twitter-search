@@ -1,12 +1,17 @@
 var express     = require('express');
 var Twitter     = require('twitter');
 var bodyParser  = require('body-parser');
-var fs          = require('fs');
+var swig        = require('swig');
 var app         = express();
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({extended: true})); // for parsing application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
+// Set Swig as view engine
+app.engine('html', swig.renderFile);
+app.set('view engine', 'html');
+app.set('views', __dirname + '/dist/views');
 
 // Set the static files root
 app.use(express.static(__dirname + '/dist'));
@@ -21,9 +26,7 @@ var client = new Twitter({
 
 // GET: /
 app.get('/', function(req, res){
-    fs.readFile(__dirname + '/index.html', 'utf-8', function(err, text){
-        res.send(text);
-    });
+    res.render('layout',{});
 });
 
 // POST: /
