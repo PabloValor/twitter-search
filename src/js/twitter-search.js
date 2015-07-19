@@ -3,6 +3,5 @@ $(document).on('ready', function(){
     var $searchInput = $('#search');
 
     $searchInput.focus();
-
-    console.log("Working...");
+    console.log("Works...");
 });

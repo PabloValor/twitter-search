@@ -1,8 +1,11 @@
+'use strict';
+
 var express     = require('express');
 var Twitter     = require('twitter');
 var bodyParser  = require('body-parser');
 var swig        = require('swig');
 var app         = express();
+var PORT        = process.env.PORT || 5050;
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({extended: true})); // for parsing application/x-www-form-urlencoded
@@ -38,9 +41,8 @@ app.post('/', function(req, res) {
     });
 });
 
-var server = app.listen(3030, function(){
+var server = app.listen(PORT, function(){
     var host = server.address().address;
-    var port = server.address().port;
 
-    console.log('Server running at http://%s:%s', host, port);
+    console.log('Server running at http://%s:%s', host, PORT);
 });

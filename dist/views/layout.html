@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="/css/main.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="blue lighten-3">
+<body class="blue lighten-3" ng-app="twitterSearch">
     <div class="container blue lighten-4">
-        <h1>Twitter Search</h1>
+        <h1>Twitter Search testing!!!!</h1>
+        <div ng-controller="myCtrl">
+            <h1>{{myCtrl.name}}</h1>
+        </div>
         <div class="row">
             <form action="/" class="col s12" method="post">
                 <div class="row">
@@ -17,7 +20,7 @@
                         <input name="userSearch" placeholder="What are you looking for?" id="search" type="text">
                         <label for="search">Search</label>
                         <div class="center-align">
-                            <button type="submit" class="waves-effect waves-light btn blue darken-4"><i class="material-icons left">Send</button>
+                            <button type="submit" class="waves-effect waves-light btn blue darken-4">mandale mecha</button>
                         </div>
                     </div>
                 </div>
