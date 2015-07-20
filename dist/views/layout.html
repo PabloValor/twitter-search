@@ -7,30 +7,45 @@
     <link rel="stylesheet" href="/css/main.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="blue darken-1">
+<body class="">
     <div class="container white" ng-controller="twitterSearchController">
-        <h1>Twitter Search testing :)</h1>
+        <h1>Twitter Search</h1>
         <div class="row">
             <form class="col s12" ng-submit="submit(search)">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="userSearch" placeholder="What are you looking for?" id="search" type="text" ng-model="search">
+                        <input name="userSearch" placeholder="What are you looking for?" id="search" type="text" ng-model="search" required>
                         <label for="search">Search</label>
                         <div class="center-align">
-                            <button type="submit" class="waves-effect waves-light btn blue darken-4">Search</button>
+                            <button type="submit" class="waves-effect waves-light btn tile darken-4"><i class="material-icons left">search</i>Search</button>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="row">
-            <h2>Results:</h2>
-            <ul>
-                <li ng-repeat="tweet in tweets">
-                    <p>[[tweet.text]]</p>
-                </li>
-            </ul>
+
+        <div class="progress" ng-show="progressBarFlag">
+            <div class="indeterminate"></div>
         </div>
+
+        <ul>
+            <li ng-repeat="tweet in tweets">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card teal">
+                            <div class="card-content white-text">
+                                <span class="card-title">Title</span>
+                                <p>[[tweet.text]]</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="#!"> this is a link</a>
+                                <a href="#!"> this is a link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
     <!-- Scripts -->
     <script type="text/javascript" src="/js/main.min.js"></script>
