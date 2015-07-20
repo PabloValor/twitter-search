@@ -11,7 +11,7 @@
     <div class="container white" ng-controller="twitterSearchController">
         <h1>Twitter Search testing :)</h1>
         <div class="row">
-            <form action="/" class="col s12" method="post">
+            <form class="col s12" ng-submit="submit(search)">
                 <div class="row">
                     <div class="input-field col s12">
                         <input name="userSearch" placeholder="What are you looking for?" id="search" type="text" ng-model="search">
@@ -21,6 +21,12 @@
                         </div>
                     </div>
                 </div>
+                <!--<div class="row">
+                    <ul>
+                        <li ng-repeat="tweet in tweets">
+                        </li>
+                    </ul>
+                </div>-->
             </form>
         </div>
     </div>
