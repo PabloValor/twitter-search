@@ -1,7 +1,7 @@
 (function(){
-    var app = angular.module('twitterSearch',[]);
+    'use strict';
+    var app = angular.module('TwitterSearch',[
+        'twitterSearch.controllers'
+    ]);
 
-    app.controller('myCtrl',['$scope',function($scope){
-        $scope.name = "Pablo";
-    }]);
-});
+})();

@@ -1,8 +1,8 @@
 {
   "name": "bower",
   "dependencies": {
-    "angular": "~1.4.3",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "angular": "~1.4.3"
   },
   "install": {
     "path": "./src/libs"

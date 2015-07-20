@@ -43,6 +43,5 @@ app.post('/', function(req, res) {
 
 var server = app.listen(PORT, function(){
     var host = server.address().address;
-
     console.log('Server running at http://%s:%s', host, PORT);
 });

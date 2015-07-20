@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="TwitterSearch">
 <head>
     <meta charset="UTF-8">
     <title>Twitter Search</title>
@@ -7,17 +7,14 @@
     <link rel="stylesheet" href="/css/main.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="blue lighten-3" ng-app="twitterSearch">
-    <div class="container blue lighten-4">
-        <h1>Twitter Search testing!!!!</h1>
-        <div ng-controller="myCtrl">
-            <h1>{{myCtrl.name}}</h1>
-        </div>
+<body class="blue darken-1">
+    <div class="container white" ng-controller="twitterSearchController">
+        <h1>Twitter Search testing :)</h1>
         <div class="row">
             <form action="/" class="col s12" method="post">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="userSearch" placeholder="What are you looking for?" id="search" type="text">
+                        <input name="userSearch" placeholder="What are you looking for?" id="search" type="text" ng-model="search">
                         <label for="search">Search</label>
                         <div class="center-align">
                             <button type="submit" class="waves-effect waves-light btn blue darken-4">mandale mecha</button>
@@ -27,7 +24,6 @@
             </form>
         </div>
     </div>
-
     <!-- Scripts -->
     <script type="text/javascript" src="/js/main.min.js"></script>
 </body>
