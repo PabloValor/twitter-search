@@ -9,8 +9,8 @@
                 $http.post('/', {userSearch: data})
                     .success(function(data){
                         deferred.resolve(data);
-                });
-
+                    }
+                );
                 return deferred.promise;
             }
 

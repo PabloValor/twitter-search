@@ -17,17 +17,19 @@
                         <input name="userSearch" placeholder="What are you looking for?" id="search" type="text" ng-model="search">
                         <label for="search">Search</label>
                         <div class="center-align">
-                            <button type="submit" class="waves-effect waves-light btn blue darken-4">mandale mecha</button>
+                            <button type="submit" class="waves-effect waves-light btn blue darken-4">Search</button>
                         </div>
                     </div>
                 </div>
-                <!--<div class="row">
-                    <ul>
-                        <li ng-repeat="tweet in tweets">
-                        </li>
-                    </ul>
-                </div>-->
             </form>
+        </div>
+        <div class="row">
+            <h2>Results:</h2>
+            <ul>
+                <li ng-repeat="tweet in tweets">
+                    <p>[[tweet.text]]</p>
+                </li>
+            </ul>
         </div>
     </div>
     <!-- Scripts -->
