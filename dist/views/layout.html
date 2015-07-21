@@ -7,39 +7,52 @@
     <link rel="stylesheet" href="/css/main.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="">
+<body>
     <div class="container white" ng-controller="twitterSearchController">
-        <h1>Twitter Search</h1>
+        <header class="center-align">
+            <img src="images/Twitter-logo.png" class="logo responsive-img" alt="Twitter logo">
+            <h1 class="blue-text text-lighten-1">Twitter Search</h1>
+        </header>
         <div class="row">
             <form class="col s12" ng-submit="submit(search)">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="userSearch" placeholder="What are you looking for?" id="search" type="text" ng-model="search" required>
+                        <i class="material-icons prefix">search</i>
+                        <input name="userSearch" id="search" type="text" ng-model="search" required>
                         <label for="search">Search</label>
+                    </div>
+                    <div class="input-field col s12">
                         <div class="center-align">
-                            <button type="submit" class="waves-effect waves-light btn tile darken-4"><i class="material-icons left">search</i>Search</button>
+                            <button type="submit" class="waves-effect waves-light btn-large white-text blue lighten-1" id="btnSearch">Search<i class="material-icons right">send</i></button>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
 
-        <div class="progress" ng-show="progressBarFlag">
-            <div class="indeterminate"></div>
+        <div class="progress blue lighten-1" ng-show="progressBarFlag">
+            <div class="indeterminate light-blue darken-4"></div>
         </div>
 
-        <ul>
+        <ul id="tweetsList">
             <li ng-repeat="tweet in tweets">
                 <div class="row">
                     <div class="col s12">
-                        <div class="card teal">
+                        <div class="card hoverable blue lighten-1">
                             <div class="card-content white-text">
-                                <span class="card-title">Title</span>
-                                <p>[[tweet.text]]</p>
+                                <span class="card-title">
+                                    <img class="circle" src="[[tweet.user.profile_image_url]]" title="[[tweet.user.screen_name]] avatar" alt="[[tweet.user.screen_name]] avatar">
+                                    <span class="add-pipe">[[tweet.user.name]]</span>
+                                    <small>@[[tweet.user.screen_name]] </small><i class="material-icons">textsms</i>
+                                </span>
+                                <p class="add-margin-top add-margin-bottom">
+                                    <span class="date white-text light-blue darken-2 add-padding-top add-padding-bottom add-padding-left add-padding-right">[[tweet.created_at]]</span>
+                                </p>
+                                <div class="horizontal-line"></div>
+                                <p class="tweet-text">[[tweet.text]]</p>
                             </div>
-                            <div class="card-action">
-                                <a href="#!"> this is a link</a>
-                                <a href="#!"> this is a link</a>
+                            <div class="card-action center-align">
+                                <a class="waves-effect waves-light btn tooltipped white-text light-blue darken-4" data-position="bottom"  data-delay="50" href="http://www.twitter.com/[[tweet.user.screen_name]]" target="_blank" data-tooltip="Visit [[tweet.user.name]] profile"><i class="material-icons left">perm_identity</i> See Profile</a>
                             </div>
                         </div>
                     </div>

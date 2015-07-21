@@ -1,2 +1,68 @@
 body {
+    .add-pipe:after {
+        content: " - ";
+    }
+    .horizontal-line {
+        height: 1px;
+        background: white;
+        margin: 10px 0 !important;
+    }
+    .logo {
+        max-width: 200px;
+    }
+    .tweet-text {
+        margin-top: 10px !important;
+    }
+    .add {
+        &-margin {
+            &-top {
+                margin-top: 5px !important;
+            }
+            &-bottom {
+                margin-bottom: 5px !important;
+            }
+        }
+        &-padding {
+            &-top {
+                padding-top: 3px !important;
+            }
+            &-bottom {
+                padding-bottom: 3px !important;
+            }
+            &-left {
+                padding-left: 5px !important;
+            }
+            &-right {
+                padding-right: 5px !important;
+            }
+        }
+    }
+
+    /* label color */
+    .input-field label {
+     color: #000;
+    }
+    /* label focus color */
+    .input-field input[type=text]:focus + label {
+     color: #000;
+    }
+    /* label underline focus color */
+    .input-field input[type=text]:focus {
+     border-bottom: 1px solid #42A5F5 !important;
+     box-shadow: 0 1px 0 0 #42A5F5 !important;
+    }
+    /* valid color */
+    .input-field input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+    }
+    /* invalid color */
+    .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+    }
+    /* icon prefix focus color */
+    .input-field .prefix.active {
+     color: #42A5F5 !important;
+    }
 }
