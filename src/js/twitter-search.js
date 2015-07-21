@@ -1,7 +1,17 @@
 $(document).on('ready', function(){
     "use strict";
     var $searchInput = $('#search');
+    var $up          = $('#up');
 
+    // hide up button
+    $up.hide();
+    $(window).on('scroll', function(){
+        if($(this).scrollTop()) {
+            $up.fadeIn();
+        } else {
+            $up.fadeOut();
+        }
+    });
     // setup and configure scrollFire Materialize feature
     /*var options = [{
         selector: '#tweetsList',

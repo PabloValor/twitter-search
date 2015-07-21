@@ -11,7 +11,6 @@
                 .then(function(tweets){
                     $scope.tweets = tweets.statuses;
                     $scope.progressBarFlag = false;
-                    console.log($scope.tweets);
                 })
         }
     }]);
