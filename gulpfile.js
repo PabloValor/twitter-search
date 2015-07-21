@@ -3,6 +3,7 @@ var gulp		=	require('gulp');
 var concat 		= 	require('gulp-concat');
 var uglify 		= 	require('gulp-uglify');
 var less 		= 	require('gulp-less');
+var minifyCSS   = require('gulp-minify-css');
 var nodemon     =   require('gulp-nodemon');
 var browserSync	=	require('browser-sync').create();
 var reload		=	browserSync.reload;
@@ -45,7 +46,7 @@ gulp.task('browser-sync', ['nodemon'], function(){
 // process JS files and return the stream.
 gulp.task('js', function () {
     return gulp.src(['src/libs/**/*.js','src/js/app.js','src/js/*.js'])
-    		//.pipe(uglify()) // uncomment this line for production
+    		.pipe(uglify()) // uncomment this line for production
     		.pipe(concat('main.min.js'))
 	        .pipe(gulp.dest('dist/js'));
 });
@@ -53,7 +54,8 @@ gulp.task('js', function () {
 // process LESS files and return the stream.
 gulp.task('less', function () {
     return gulp.src(['src/css/main.less'])
-	    	.pipe(less({compress: true}))
+            .pipe(less({compress: true}))
+            .pipe(minifyCSS({keepBreaks: false}))
 	    	.pipe(concat('main.min.css'))
 	        .pipe(gulp.dest('dist/css'));
 });
