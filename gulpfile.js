@@ -55,7 +55,7 @@ gulp.task('js', function () {
 gulp.task('less', function () {
     return gulp.src(['src/css/main.less'])
             .pipe(less({compress: true}))
-            .pipe(minifyCSS({keepBreaks: false}))
+            .pipe(minifyCSS({keepSpecialComments: 0}))
 	    	.pipe(concat('main.min.css'))
 	        .pipe(gulp.dest('dist/css'));
 });
