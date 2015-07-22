@@ -14,7 +14,7 @@
             <h1 class="blue-text text-lighten-1">Twitter Search</h1>
         </header>
         <div class="row">
-            <form class="col s12" ng-submit="submit(search)">
+            <form class="col s12" ng-submit="submit()">
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">search</i>
@@ -52,13 +52,16 @@
                                 <p class="tweet-text">[[tweet.text]]</p>
                             </div>
                             <div class="card-action center-align">
-                                <a class="waves-effect waves-light btn tooltipped white-text light-blue darken-4" data-position="bottom"  data-delay="50" href="http://www.twitter.com/[[tweet.user.screen_name]]" target="_blank" data-tooltip="Visit [[tweet.user.name]] profile"><i class="material-icons left">perm_identity</i> See Profile</a>
+                                <a class="waves-effect waves-light btn tooltipped white-text light-blue darken-4" data-position="bottom"  data-delay="50" href="http://www.twitter.com/[[tweet.user.screen_name]]" target="_blank" data-tooltip="Visit [[tweet.user.name]] profile"><i class="material-icons left">person_pin</i> See Profile</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </li>
         </ul>
+        <div class="center-align load-more-container" ng-show="tweets.length">
+            <a class="waves-effect waves-light btn-large white-text light-blue darken-3" ng-click="loadMore()"><i class="material-icons right">message</i>Load more tweets</a>
+        </div>
         <div class="center-align">
             <a href="https://twitter.com/pablovalor" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @pablovalor</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

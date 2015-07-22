@@ -35,7 +35,7 @@ app.get('/', function(req, res){
 // POST: /
 app.post('/', function(req, res) {
     // Twitter API GET results
-    client.get('search/tweets',{q: req.body.userSearch}, function(error, tweets, response){
+    client.get('search/tweets',{q: req.body.userSearch, count: req.body.count}, function(error, tweets, response){
         if(error) throw error;
         res.json(tweets);
     });
