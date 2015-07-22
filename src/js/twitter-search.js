@@ -1,17 +1,8 @@
 $(document).on('ready', function(){
     "use strict";
-    var $searchInput = $('#search');
-    var $up          = $('#up');
+    var $btnSearch      = $('#btnSearch');
+    var $btnLoadMore    = $('#btnLoadMore');
 
-    // hide up button
-    $up.hide();
-    $(window).on('scroll', function(){
-        if($(this).scrollTop()) {
-            $up.fadeIn();
-        } else {
-            $up.fadeOut();
-        }
-    });
     // setup and configure scrollFire Materialize feature
     /*var options = [{
         selector: '#tweetsList',
@@ -22,13 +13,15 @@ $(document).on('ready', function(){
     Materialize.scrollFire(options);*/
 
     // initialize Materialize tooltip
-    $('#btnSearch').on('click', function(){
-        // dirty hack to apply tooltip functionallity in dom elements
+    function initializeTooltip () {
         setTimeout(function(){
+            // dirty hack to apply tooltip functionallity in dom elements
             $('.tooltipped').tooltip({delay: 50});
-
         },2500);
-    });
+    }
+
+    $('#btnSearch').on('click', initializeTooltip);
+    $('#btnLoadMore').on('click', initializeTooltip);
 
     console.log("dom ready...");
 });

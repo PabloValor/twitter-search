@@ -29,11 +29,6 @@
                 </div>
             </form>
         </div>
-        <!-- Progress bar -->
-        <div class="progress blue lighten-1" ng-show="progressBarFlag">
-            <div class="indeterminate light-blue darken-4"></div>
-        </div>
-        <!-- End Progress bar -->
         <ul id="tweetsList">
             <li ng-repeat="tweet in tweets">
                 <div class="row">
@@ -60,14 +55,18 @@
             </li>
         </ul>
         <div class="center-align load-more-container" ng-show="tweets.length">
-            <a class="waves-effect waves-light btn-large white-text light-blue darken-3" ng-click="loadMore()"><i class="material-icons right">message</i>Load more tweets</a>
+            <a class="waves-effect waves-light btn-large white-text light-blue darken-3" ng-click="loadMore()" id="btnLoadMore"><i class="material-icons right">message</i>Load more tweets</a>
         </div>
+        <!-- Progress bar -->
+        <div class="progress blue lighten-1" ng-show="progressBarFlag">
+            <div class="indeterminate light-blue darken-4"></div>
+        </div>
+        <!-- End Progress bar -->
         <div class="center-align">
             <a href="https://twitter.com/pablovalor" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @pablovalor</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </div>
     </div>
-    <span id="up">Go up</span>
     <!-- Scripts -->
     <script type="text/javascript" src="/js/main.min.js"></script>
 </body>
