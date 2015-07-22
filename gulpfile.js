@@ -46,7 +46,7 @@ gulp.task('browser-sync', ['nodemon'], function(){
 // process JS files and return the stream.
 gulp.task('js', function () {
     return gulp.src(['src/libs/**/*.js','src/js/app.js','src/js/*.js'])
-    		//.pipe(uglify()) // uncomment this line for production
+    		.pipe(uglify()) // uncomment this line for production
     		.pipe(concat('main.min.js'))
 	        .pipe(gulp.dest('dist/js'));
 });
